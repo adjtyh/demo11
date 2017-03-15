@@ -37,8 +37,6 @@ public class AddJbggwsController {
 	
 	@Resource
 	JbggwsServiceImpl jbggwsservice;
-	
-	
 
 	@RequestMapping("addJbggws")
 	public String dojbggws_dec(HttpServletRequest request){

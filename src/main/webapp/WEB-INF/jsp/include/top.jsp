@@ -16,8 +16,8 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">全科医疗科</a></li>
-					<li><a href="#">信息科</a></li>
-					<li><a href="#">系统管理</a></li>
+					<!-- <li><a href="#">信息科</a></li>
+					<li><a href="#">系统管理</a></li> -->
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 

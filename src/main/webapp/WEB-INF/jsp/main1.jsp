@@ -42,9 +42,9 @@
 		<div class="row clearfix">
 			<div class="col-md-2 column">
 				<ul class="nav nav-pills nav-stacked ">
-					<li role="presentation" class="active"><a href="#">报表1</a></li>
-					<li role="presentation"><a href="#">报表2</a></li>
-					<li role="presentation"><a href="#">报表3</a></li>
+					<li role="presentation" class="active"><a href="http://localhost:8080/demo11/main1.html">报表1</a></li>
+					<li role="presentation"><a href="http://localhost:8080/demo11/main2.html">报表2</a></li>
+					<li role="presentation"><a href="http://localhost:8080/demo11/main3.html">报表3</a></li>
 				</ul>
 			</div>
 			<div class="col-md-10 column">
@@ -99,10 +99,13 @@
 					</div>
 				</div>
 				<div class="row clearfix">
-					<table class="table table-bordered">
+					<!-- <table class="table table-bordered"> -->
+						<table border="1">
 						<form action="doJbggws.html" method="post" name="form2"
 							target="_blank">
-							<caption>基本公共卫生服务季度报表</caption>
+							<caption>基本公共卫生服务季度报表<br/>
+							注意：本表数据必须认真核对，没有的应填0；各数据要符合逻辑关系；在每季度结束1周内填报，第10天系统自动停止收集数据。
+							</caption>
 							<thead>
 								<tr>
 									<th>序号</th>
@@ -111,8 +114,11 @@
 									<th>删除</th>
 									<th>时间</th>
 									<!--循环输出表格列  -->
-									<c:forEach var="num" begin="1" end="33" step="1">
-										<th>i${num }</th>
+									<c:forEach var="num1" begin="1" end="9" step="1">
+										<th>i0${num1 }</th>
+									</c:forEach>
+									<c:forEach var="num2" begin="10" end="33" step="1">
+										<th>i${num2 }</th>
 									</c:forEach>
 								</tr>
 							</thead>
@@ -176,7 +182,7 @@
 						</form>
 					</table>
 					<p>返回行数：${rowCount }</p>
-					<p>pageParamJbggws.rowCount:${pageParamJbggws.rowCount }
+
 				</div>
 			</div>
 		</div>
@@ -204,7 +210,6 @@
 			form2.submit();
 		}
 	}
-
-
 </script>
+
 </html>

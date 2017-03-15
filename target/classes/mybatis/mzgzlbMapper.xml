@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.adjtyh.demo11.dao.IMzgzlbDao">
+
+	<cache eviction="FIFO" flushInterval="60000" size="500" readOnly="true"></cache>
+
+	
+	<select id="selectByI1" resultType="Mzgzlb" parameterType="int">
+		select * from mzgzlb where i1 = #{i1}
+	</select>
+	
+	<select id="selectByJId" resultType="Mzgzlb" parameterType="int">
+		select * from mzgzlb where mId = #{mId}
+	</select>
+	
+	
+	<select id="selectByDate" resultType="Mzgzlb" parameterType="String">
+		select * from mzgzlb where date = #{date}
+	</select>
+
+	<select id="getRowCount" resultType="int">
+		SELECT COUNT(*) FROM mzgzlb
+	</select>
+	
+	<select id="getTable" resultType="Mzgzlb">
+		SELECT * FROM mzgzlb
+	</select>
+	
+	<insert id="addItem" parameterType="Mzgzlb" > 
+        insert into mzgzlb(date,i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,
+        i13,i14,i15,i16,i17,i18,i19,i20,i21,i22,i23,i24) 
+        values (#{mzgzlb.date},#{mzgzlb.i1},
+        #{mzgzlb.i2},#{mzgzlb.i3},#{mzgzlb.i4},#{mzgzlb.i5},#{mzgzlb.i6},
+        #{mzgzlb.i7},#{mzgzlb.i8},#{mzgzlb.i9},#{mzgzlb.i10},
+        #{mzgzlb.i11},#{mzgzlb.i12},#{mzgzlb.i13},#{mzgzlb.i14},
+        #{mzgzlb.i15},#{mzgzlb.i16},#{mzgzlb.i17},#{mzgzlb.i18},
+        #{mzgzlb.i19},#{mzgzlb.i20},#{mzgzlb.i21},#{mzgzlb.i22},
+        #{mzgzlb.i23},#{mzgzlb.i24})  
+    </insert>
+    
+    <update id="updateItem" parameterType="Mzgzlb">
+    	UPDATE mzgzlb SET i1=#{mzgzlb.i1},i2=#{mzgzlb.i2},i3=#{mzgzlb.i3},
+    	i4=#{mzgzlb.i4},i5=#{mzgzlb.i5},i6=#{mzgzlb.i6},i7=#{mzgzlb.i7},i8=#{mzgzlb.i8},
+    	i9=#{mzgzlb.i9},i10=#{mzgzlb.i10},i11=#{mzgzlb.i11},i12=#{mzgzlb.i12},
+    	i13=#{mzgzlb.i13},i14=#{mzgzlb.i14},i15=#{mzgzlb.i15},i16=#{mzgzlb.i16},
+    	i17=#{mzgzlb.i17},i18=#{mzgzlb.i18},i19=#{mzgzlb.i19},i20=#{mzgzlb.i20},
+    	i21=#{mzgzlb.i21},i22=#{mzgzlb.i22},i23=#{mzgzlb.i23},i24=#{mzgzlb.i24} 
+    	WHERE mId = #{mzgzlb.mId}
+    </update>
+    
+	<delete id="delItem" parameterType="int">
+        delete from mzgzlb where mId = #{mId}
+    </delete>
+
+	<!-- <insert id="addItem" parameterType="Mzgzlb" > 
+        insert into mzgzlb(date) values (#{mzgzlb.date})  
+    </insert> -->
+
+
+</mapper> 

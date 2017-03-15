@@ -40,8 +40,6 @@ public class MainController {
 	
 	@Resource
 	JbggwsServiceImpl jbggwsservice;
-	
-	
 
 	@RequestMapping("doMain1")
 	public String doMain1(){
@@ -61,6 +59,11 @@ public class MainController {
 		request.setAttribute("rowCount", pageParamJbggws.getRowCount());
 		System.out.println("返回行数："+pageParamJbggws.getRowCount());
 		//request.setAttribute("userList", userList);
+
+		return "main1";
+	}
+	@RequestMapping("main1")
+	public String main1(){
 
 		return "main1";
 	}
