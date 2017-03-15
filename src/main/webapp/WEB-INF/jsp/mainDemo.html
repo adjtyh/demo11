@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css">
+
+    <!--&lt;!&ndash; jQuery文件。务必在bootstrap.min.js 之前引入 &ndash;&gt;-->
+    <!--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>-->
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="bootstrap-3.3.7/dist/js/bootstrap.min.js" rel="stylesheet"
+            type="text/css"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        .<span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+                <div class="collapse navbar-collapse"
+                     id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="#">全科医疗科</a>
+                        </li>
+                        <li>
+                            <a href="#">信息科</a>
+                        </li>
+                        <li>
+                            <a href="#">系统管理</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-2 column">
+            <ul class="nav nav-pills nav-stacked " >
+                <li role="presentation" class="active"><a href="#">报表1</a></li>
+                <li role="presentation"><a href="#">报表2</a></li>
+                <li role="presentation"><a href="#">报表3</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10 column">
+            <div class="row clearfix">
+
+                <form class="form-inline">
+
+                    <div class="form-group">
+                        <select class="form-control" id="station">
+                            <option>城北</option>
+                            <option>大榄</option>
+                            <option>新城</option>
+                            <option>大布</option>
+                            <option>罗村</option>
+                        </select>
+                        <label for="station">站点</label>
+                    </div>
+
+                    <button type="button" class="btn btn-info">查询</button>
+
+                    <button type="button" class="btn btn-primary">增加</button>
+
+                    <button type="button" class="btn btn-success">修改</button>
+
+                    <button type="button" class="btn btn-danger">删除</button>
+
+                </form>
+
+            </div>
+            <div class="row clearfix">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>
+                        编号
+                    </th>
+                    <th>
+                        项目
+                    </th>
+                    <th>
+                        描述说明
+                    </th>
+                    <th>
+                        数据
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        TB - Monthly
+                    </td>
+                    <td>
+                        01/04/2012
+                    </td>
+                    <td>
+                        Default
+                    </td>
+                </tr>
+                <tr class="success">
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        TB - Monthly
+                    </td>
+                    <td>
+                        01/04/2012
+                    </td>
+                    <td>
+                        Approved
+                    </td>
+                </tr>
+                <tr class="error">
+                    <td>
+                        2
+                    </td>
+                    <td>
+                        TB - Monthly
+                    </td>
+                    <td>
+                        02/04/2012
+                    </td>
+                    <td>
+                        Declined
+                    </td>
+                </tr>
+                <tr class="warning">
+                    <td>
+                        3
+                    </td>
+                    <td>
+                        TB - Monthly
+                    </td>
+                    <td>
+                        03/04/2012
+                    </td>
+                    <td>
+                        Pending
+                    </td>
+                </tr>
+                <tr class="info">
+                    <td>
+                        4
+                    </td>
+                    <td>
+                        TB - Monthly
+                    </td>
+                    <td>
+                        04/04/2012
+                    </td>
+                    <td>
+                        Call in to confirm
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+        </div>
+    </div>
+</div>
+</body>
+</html>

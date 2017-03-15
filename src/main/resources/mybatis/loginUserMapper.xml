@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.adjtyh.demo11.dao.ILoginUserDao">
+
+	<cache eviction="FIFO" flushInterval="60000" size="500" readOnly="true"></cache>
+
+	
+	<select id="selectByuName" resultType="LoginUser" parameterType="String">
+		select * from user where uName = #{uName}
+	</select>
+	
+	<select id="getRowCount" resultType="int">
+		SELECT COUNT(*) FROM user
+	</select>
+	
+	<select id="getTable" resultType="LoginUser">
+		SELECT * FROM user
+	</select>
+	
+	<insert id="addItem" parameterType="LoginUser" > 
+        insert into user(uName,uPassword,uLevel) 
+        values (#{loginUser.uName},#{loginUser.uPassword},#{loginUser.uLevel})  
+    </insert>
+    
+    <update id="updateItem" parameterType="LoginUser">
+    	UPDATE user SET uPassword=#{loginUser.uPassword},uLevel=#{loginUser.uLevel} 
+    	WHERE uName = #{loginUser.uName}
+    </update>
+    
+	<delete id="delItem" parameterType="String">
+        delete from user where uName = #{uName}
+    </delete>
+
+
+</mapper> 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.adjtyh.demo11.dao.IJbggwsDao">
+
+	<cache eviction="FIFO" flushInterval="60000" size="500" readOnly="true"></cache>
+
+	
+	<select id="selectByI1" resultType="Jbggws" parameterType="int">
+		select * from jbggws where i1 = #{i1}
+	</select>
+	
+	<select id="selectByJId" resultType="Jbggws" parameterType="int">
+		select * from jbggws where jId = #{jId}
+	</select>
+	
+	
+	<select id="selectByDate" resultType="Jbggws" parameterType="String">
+		select * from jbggws where date = #{date}
+	</select>
+
+	<select id="getRowCount" resultType="int">
+		SELECT COUNT(*) FROM jbggws
+	</select>
+	
+	<select id="getTable" resultType="Jbggws">
+		SELECT * FROM jbggws
+	</select>
+	
+	<insert id="addItem" parameterType="Jbggws" > 
+        insert into jbggws(date,i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,
+        i13,i14,i15,i16,i17,i18,i19,i20,i21,i22,i23,i24,i25,i26,i27,i28,
+        i29,i30,i31,i32,i33) 
+        values (#{jbggws.date},#{jbggws.i1},
+        #{jbggws.i2},#{jbggws.i3},#{jbggws.i4},#{jbggws.i5},#{jbggws.i6},
+        #{jbggws.i7},#{jbggws.i8},#{jbggws.i9},#{jbggws.i10},
+        #{jbggws.i11},#{jbggws.i12},#{jbggws.i13},#{jbggws.i14},
+        #{jbggws.i15},#{jbggws.i16},#{jbggws.i17},#{jbggws.i18},
+        #{jbggws.i19},#{jbggws.i20},#{jbggws.i21},#{jbggws.i22},
+        #{jbggws.i23},#{jbggws.i24},#{jbggws.i25},#{jbggws.i26},
+        #{jbggws.i27},#{jbggws.i28},#{jbggws.i29},#{jbggws.i30},
+        #{jbggws.i31},#{jbggws.i32},#{jbggws.i33})  
+    </insert>
+    
+    <update id="updateItem" parameterType="Jbggws">
+    	UPDATE jbggws SET i1=#{jbggws.i1},i2=#{jbggws.i2},i3=#{jbggws.i3},
+    	i4=#{jbggws.i4},i5=#{jbggws.i5},i6=#{jbggws.i6},i7=#{jbggws.i7},i8=#{jbggws.i8},
+    	i9=#{jbggws.i9},i10=#{jbggws.i10},i11=#{jbggws.i11},i12=#{jbggws.i12},
+    	i13=#{jbggws.i13},i14=#{jbggws.i14},i15=#{jbggws.i15},i16=#{jbggws.i16},
+    	i17=#{jbggws.i17},i18=#{jbggws.i18},i19=#{jbggws.i19},i20=#{jbggws.i20},
+    	i21=#{jbggws.i21},i22=#{jbggws.i22},i23=#{jbggws.i23},i24=#{jbggws.i24},
+    	i25=#{jbggws.i25},i26=#{jbggws.i26},i27=#{jbggws.i27},i28=#{jbggws.i28},
+    	i29=#{jbggws.i29},i30=#{jbggws.i30},i31=#{jbggws.i31},i32=#{jbggws.i32},
+    	i33=#{jbggws.i33} 
+    	WHERE jId = #{jbggws.jId}
+    </update>
+    
+	<delete id="delItem" parameterType="int">
+        delete from jbggws where jId = #{jId}
+    </delete>
+
+	<!-- <insert id="addItem" parameterType="Jbggws" > 
+        insert into jbggws(date) values (#{jbggws.date})  
+    </insert> -->
+
+
+</mapper> 
