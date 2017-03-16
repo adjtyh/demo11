@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.adjtyh.demo11.dao.ILbzbbDao">
+
+	<cache eviction="FIFO" flushInterval="60000" size="500" readOnly="true"></cache>
+
+	
+	<select id="selectByI1" resultType="Lbzbb" parameterType="int">
+		select * from lbzbb where i1 = #{i1}
+	</select>
+	
+	<select id="selectByJId" resultType="Lbzbb" parameterType="int">
+		select * from lbzbb where lId = #{lId}
+	</select>
+	
+	
+	<select id="selectByDate" resultType="Lbzbb" parameterType="String">
+		select * from lbzbb where date = #{date}
+	</select>
+
+	<select id="getRowCount" resultType="int">
+		SELECT COUNT(*) FROM lbzbb
+	</select>
+	
+	<select id="getTable" resultType="Lbzbb">
+		SELECT * FROM lbzbb
+	</select>
+	
+	<insert id="addItem" parameterType="Lbzbb" > 
+        insert into lbzbb(date,i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,
+        i13,i14,i15,i16,i17) 
+        values (#{lbzbb.date},#{lbzbb.i1},
+        #{lbzbb.i2},#{lbzbb.i3},#{lbzbb.i4},#{lbzbb.i5},#{lbzbb.i6},
+        #{lbzbb.i7},#{lbzbb.i8},#{lbzbb.i9},#{lbzbb.i10},
+        #{lbzbb.i11},#{lbzbb.i12},#{lbzbb.i13},#{lbzbb.i14},
+        #{lbzbb.i15},#{lbzbb.i16},#{lbzbb.i17})  
+    </insert>
+    
+    <update id="updateItem" parameterType="Lbzbb">
+    	UPDATE lbzbb SET i1=#{lbzbb.i1},i2=#{lbzbb.i2},i3=#{lbzbb.i3},
+    	i4=#{lbzbb.i4},i5=#{lbzbb.i5},i6=#{lbzbb.i6},i7=#{lbzbb.i7},i8=#{lbzbb.i8},
+    	i9=#{lbzbb.i9},i10=#{lbzbb.i10},i11=#{lbzbb.i11},i12=#{lbzbb.i12},
+    	i13=#{lbzbb.i13},i14=#{lbzbb.i14},i15=#{lbzbb.i15},i16=#{lbzbb.i16},
+    	i17=#{lbzbb.i17}
+    	WHERE lId = #{lbzbb.lId}
+    </update>
+    
+	<delete id="delItem" parameterType="int">
+        delete from lbzbb where lId = #{lId}
+    </delete>
+
+	<!-- <insert id="addItem" parameterType="Lbzbb" > 
+        insert into lbzbb(date) values (#{lbzbb.date})  
+    </insert> -->
+
+
+</mapper> 

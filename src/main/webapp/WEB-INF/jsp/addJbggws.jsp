@@ -65,29 +65,32 @@
 										<td><input type="text" class="form-control"
 											value="<%=strtemp%>" placeholder="文本输入"
 											name="value<%=pageParamJbggws.getData().get(0).getId()%>"
-											<%
-											if ((int) (session.getAttribute("uLevel")) > 1) {
-												%>readonly="readonly"<%
-											}
-											%>
-											 /></td>
+											<%if ((int) (session.getAttribute("uLevel")) > 1) {%>
+											readonly="readonly" <%}%> /></td>
 										<td><%=pageParamJbggws.getData().get(0).getDescription()%></td>
 									</tr>
 									<%
-										for (int i = 1; i < pageParamJbggws.getData().size(); i++) {
+										for (int i = 1; i < pageParamJbggws.getData().size()-1; i++) {
 									%>
 									<tr>
 										<td><%=pageParamJbggws.getData().get(i).getId()%></td>
 										<td><%=pageParamJbggws.getData().get(i).getItem()%></td>
 										<td><input type="text" class="form-control"
-											value="0" placeholder="文本输入"
-											name="value<%=pageParamJbggws.getData().get(i).getId()%>"
-											 /></td>
+											onkeyup="checkInput(this)" value="0" placeholder="文本输入"
+											name="value<%=pageParamJbggws.getData().get(i).getId()%>" /></td>
 										<td><%=pageParamJbggws.getData().get(i).getDescription()%></td>
 									</tr>
 									<%
 										}
 									%>
+									<tr>
+										<td><%=pageParamJbggws.getData().get(pageParamJbggws.getData().size()-1).getId()%></td>
+										<td><%=pageParamJbggws.getData().get(pageParamJbggws.getData().size()-1).getItem()%></td>
+										<td><input type="text" class="form-control" readonly="readonly"
+											onkeyup="checkInput(this)" value="0" placeholder="文本输入"
+											name="value<%=pageParamJbggws.getData().get(pageParamJbggws.getData().size()-1).getId()%>" /></td>
+										<td><%=pageParamJbggws.getData().get(pageParamJbggws.getData().size()-1).getDescription()%></td>
+									</tr>
 
 								</tbody>
 						</table>
@@ -98,4 +101,28 @@
 		</div>
 	</div>
 </body>
+<script>
+	function checkInput(el) {
+		var reg = new RegExp("^[0-9]*$");
+		//alert(reg.test(el.value));
+		if (!reg.test(el.value)) {
+			alert('只能整数!');
+			el.value = '0';
+			return;
+		}
+		autoSum(el);
+	}
+	function autoSum(el) {
+		if (el.name == "value6" || el.name == "value10" || el.name == "value12"
+				|| el.name == "value16" || el.name == "value18"
+				|| el.name == "value30" || el.name == "value31"
+				|| el.name == "value32") {
+			$("input")[32].value = parseInt($("input")[5].value) + parseInt($("input")[9].value)
+					+ parseInt($("input")[11].value) + parseInt($("input")[15].value)
+					+ parseInt($("input")[17].value) + parseInt($("input")[29].value)
+					+ parseInt($("input")[30].value) + parseInt($("input")[31].value);
+		}
+	}
+</script>
+
 </html>

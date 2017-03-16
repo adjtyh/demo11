@@ -44,7 +44,7 @@
 				<ul class="nav nav-pills nav-stacked ">
 					<li role="presentation"><a href="http://localhost:8080/demo11/main1.html">报表1</a></li>
 					<li role="presentation" class="active"><a href="http://localhost:8080/demo11/main2.html">报表2</a></li>
-					<li role="presentation"><a href="http://localhost:8080/demo11/main2.html">报表3</a></li>
+					<li role="presentation"><a href="http://localhost:8080/demo11/main3.html">报表3</a></li>
 				</ul>
 			</div>
 			<div class="col-md-10 column">

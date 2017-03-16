@@ -110,5 +110,28 @@
 	function closewin() {
 		window.close();
 	}
+	<script>
+	function checkInput(el) {
+		var reg = new RegExp("^[0-9]*$");
+		//alert(reg.test(el.value));
+		if (!reg.test(el.value)) {
+			alert('只能整数!');
+			el.value = '0';
+			return;
+		}
+		autoSum(el);
+	}
+	function autoSum(el) {
+		if (el.name == "value6" || el.name == "value10" || el.name == "value12"
+				|| el.name == "value16" || el.name == "value18"
+				|| el.name == "value30" || el.name == "value31"
+				|| el.name == "value32") {
+			$("input")[32].value = parseInt($("input")[5].value) + parseInt($("input")[9].value)
+					+ parseInt($("input")[11].value) + parseInt($("input")[15].value)
+					+ parseInt($("input")[17].value) + parseInt($("input")[29].value)
+					+ parseInt($("input")[30].value) + parseInt($("input")[31].value);
+		}
+	}
+</script>
 </script>
 </html>
